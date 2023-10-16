@@ -71,8 +71,8 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             TextButton(
               onPressed: () {
-                Navigator.push(
-                    context,
+                Navigator.of(context).pushReplacement(
+                   
                     MaterialPageRoute(
                       builder: (context) => const Signup(),
                     ));
@@ -96,9 +96,7 @@ class _LoginScreenState extends State<LoginScreen> {
         if (userCredential.user != null) {
           print('User signed in: ${userCredential.user!.email}');
 
-          // You can choose to navigate here or use the authStateChanges listener
-          Navigator.pushReplacement(
-            context,
+          Navigator.of(context).pushReplacement(
             MaterialPageRoute(
               builder: (context) =>
                   HomePage(userId: userCredential.user!.email),

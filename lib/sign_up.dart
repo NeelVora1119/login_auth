@@ -77,11 +77,9 @@ class _SignupState extends State<Signup> {
             ),
             TextButton(
               onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => LoginScreen(),
-                    ));
+                Navigator.of(context).pushReplacement(MaterialPageRoute(
+                  builder: (context) => LoginScreen(),
+                ));
               },
               child: const Text('Have Account?'),
             )
@@ -111,8 +109,7 @@ class _SignupState extends State<Signup> {
         ),
       );
       // Navigate to another screen with user ID
-      Navigator.pushReplacement(
-        context,
+      Navigator.of(context).pushReplacement(
         MaterialPageRoute(
           builder: (context) =>
               HomePage(userId: userCredential.user!.email), // Pass user ID here
