@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:login_auth/firebase_options.dart';
-import 'package:login_auth/loginScreen.dart';
+
 import 'package:login_auth/sign_up.dart';
 
 void main() async {
@@ -9,7 +9,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  
+
   runApp(const LoginAuth());
 }
 
